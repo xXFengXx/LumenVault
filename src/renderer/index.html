@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lumen Vault</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="library-panel">
+        <header class="brand-row">
+          <div class="brand-mark">L</div>
+          <div><strong>Lumen Vault</strong><span>LOCAL KNOWLEDGE</span></div>
+          <button class="icon-button" id="settingsButton" title="打开本地数据目录">•••</button>
+        </header>
+
+        <div class="library-heading">
+          <div><p class="eyebrow">资料库</p><h1>文档</h1></div>
+          <button class="primary-icon" id="newButton" title="新建文档">＋</button>
+        </div>
+
+        <label class="search-box">
+          <span>⌕</span>
+          <input id="searchInput" type="search" placeholder="搜索文档…" />
+          <kbd>⌘ K</kbd>
+        </label>
+
+        <div class="section-label"><span>全部文档</span><button id="importButton">导入</button></div>
+        <div class="document-list" id="documentList"></div>
+
+        <footer class="storage-card">
+          <div class="storage-icon">⌂</div>
+          <div><strong>本地存储</strong><span id="dataPath">正在准备数据目录…</span></div>
+          <i class="status-dot"></i>
+        </footer>
+      </aside>
+
+      <section class="workspace">
+        <header class="editor-toolbar">
+          <div class="breadcrumb"><span>资料库</span><b>/</b><strong id="breadcrumbTitle">文档</strong></div>
+          <div class="save-state"><i></i><span id="saveState">已保存到本地</span></div>
+          <button class="delete-button" id="deleteButton" title="删除当前文档">删除</button>
+        </header>
+        <article class="editor">
+          <input id="titleInput" class="title-input" value="" placeholder="无标题文档" />
+          <div class="document-meta"><span id="updatedAt">刚刚更新</span><span>•</span><span id="wordCount">0 字</span></div>
+          <textarea id="contentInput" placeholder="开始记录你的知识…"></textarea>
+        </article>
+      </section>
+
+      <aside class="chat-panel">
+        <header class="chat-header">
+          <div><p class="eyebrow">智能助手</p><h2>问问 Lumen</h2></div>
+          <button class="icon-button" id="clearChat" title="清空对话">↻</button>
+        </header>
+        <div class="context-banner"><span>✦</span><p><strong>已连接全部文档</strong><br />回答仅基于你的本地知识库</p></div>
+        <div class="messages" id="messages">
+          <div class="message assistant-message">
+            <div class="avatar">L</div>
+            <div><p>你好，我是 Lumen。你可以询问知识库里的任何内容，我会找到最相关的文档来回答。</p></div>
+          </div>
+          <div class="suggestions">
+            <button>帮我总结知识库</button>
+            <button>有哪些重要内容？</button>
+          </div>
+        </div>
+        <form class="composer" id="chatForm">
+          <textarea id="questionInput" rows="1" placeholder="针对知识库提问…"></textarea>
+          <div class="composer-footer"><span>本地检索 · 数据不会离开设备</span><button type="submit">↑</button></div>
+        </form>
+      </aside>
+    </main>
+    <div class="toast" id="toast"></div>
+    <script src="app.js"></script>
+  </body>
+</html>

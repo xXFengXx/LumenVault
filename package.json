@@ -1,0 +1,16 @@
+{
+  "name": "lumenvault",
+  "version": "1.0.0",
+  "description": "A private, local-first knowledge vault built with Electron.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^37.2.0"
+  },
+  "allowScripts": {
+    "electron@37.10.3": true
+  }
+}
